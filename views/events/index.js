@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 exports.find = function(req, res, next){
   req.query.name = req.query.name ? req.query.name : '';
