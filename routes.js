@@ -36,10 +36,14 @@ exports = module.exports = function(app, passport) {
   app.post('/contact/', require('./views/contact/index').sendMessage);
 
   //event routs
-  app.get('/events/', require('./views/events/index').find); //finding events
-  app.get('/events/show/:id/', require('./views/events/index').read); //finding details of clicked event
+  app.get('/events/', require('./views/events/index').find);
+  app.get('/events/show/:id/', require('./views/events/index').read);
   app.get('/events/add', require('./views/events/index').add);
   app.post('/events/', require('./views/events/index').create);
+  app.get('/myevents/', require('./views/myevents/index').find);
+  app.get('/events/edit/:id/', require('./views/events/index').edit);
+  app.post('/events/update/:id/', require('./views/events/index').update);
+  app.delete('/events/delete/:id/', require('./views/events/index').delete);
     
   //sign up
   app.get('/signup/', require('./views/signup/index').init);
